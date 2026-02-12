@@ -1,0 +1,19 @@
+
+[
+    {
+        "id": 1,
+        "nombres": "Jaime",
+        "apellidos": "Ramírez Gomez",
+        "telefono": "3001234567",
+        "direccion": "Apto 101 - Torre A",
+        "tipo_usuario": "residente"
+    },
+    {
+        "id": 2,
+        "nombres": "Junior",
+        "apellidos": "Fernández Lopez",
+        "telefono": "3109876543",
+        "direccion": "Oficina Administración",
+        "tipo_usuario": "administrador"
+    }
+]
