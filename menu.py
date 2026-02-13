@@ -1,32 +1,33 @@
 
-import json 
+import json
+
 
 with open("usuarios.json", "r") as arch:
     usuarios = json.load(arch)
 
-
-
+with open("herramientas.json", "r") as arch:
+    herramientas = json.load(arch)
 
 def menu_usuarios():
 
     while True:
         print("""
-        ================================
-         BIENVENIDO AL MENU DE USUARIO
-        ================================
-        1. Ver herramientas disponibles
-        2. Prestar herramienta
-        3. Devolver herramienta
-        4. Salir
-        ================================
+    ================================
+        BIENVENIDO AL MENU DE USUARIO
+    ================================
+    1. Ver herramientas disponibles
+    2. Solocitar prestamo de herramienta
+    3. Devolver herramienta
+    4. Salir
+    ================================
         
         """)
+        from herramientas import ver_herramientas_disponibles, solcitar_herramienta, devolver_herramienta
         opcion = input("Ingrese una opcion: ")
         if opcion == "1":
-            ver_herramientas_disponibles()       
+            ver_herramientas_disponibles(herramientas)       
         elif opcion == "2":
-            prestar_herramienta()
-            pass
+            solcitar_herramienta()
         elif opcion == "3":
             devolver_herramienta()
         elif opcion == "4":
@@ -39,43 +40,47 @@ def menu_usuarios():
 
 
 
-
 def menu_admin():
 
     while True:
         print("""
-        ===============================
-         BIENVENIDO MENU ADMINISTRADOR
-        ===============================
-        1. Ver herramientas disponibles
-        2. Agregar/Actualizar herramienta
-        3. Eliminar herramienta
-        4. Agregar/Actualizar usuario
-        5. Prestamos pendientes
-        6. Eliminar usuario
-        7.Consultas y reportes
-        8.Registro de eventos (logs)
-        9. Salir
-        ================================
+    ===============================
+        BIENVENIDO MENU ADMINISTRADOR
+    ===============================
+    1. Ver herramientas disponibles
+    2. Agregar herramienta
+    3. Modificar herramienta
+    4. Eliminar herramienta
+    5. Agregar/Actualizar usuario
+    6. Prestamos pendientes
+    7. Eliminar usuario
+    8.Consultas y reportes
+    9.Registro de eventos (logs)
+    10. Salir
+    ================================
         """)
         op = input("Ingrese una opcion: ")
+        from herramientas import ver_herramientas_disponibles,agregar_herramienta,  eliminar_herramienta, modificar_herramienta
+        from usurios import agregar_actualizar_usuario, prestamos_pendientes, eliminar_usuario, consultas_reportes, registro_eventos
         if op == "1":
-            ver_herramientas_disponibles()
+            ver_herramientas_disponibles(herramientas)
         elif op == "2":
-            agregar_actualizar_herramienta()
+            agregar_herramienta(herramientas)
         elif op == "3":
-            eliminar_herramienta()
-        elif op == "4":
-            agregar_actualizar_usuario()
+            modificar_herramienta(herramientas)
+        elif op == "4":            
+            eliminar_herramienta(herramientas)
         elif op == "5":
-            prestamos_pendientes()
+            agregar_actualizar_usuario(usuarios)
         elif op == "6":
-            eliminar_usuario()
+            prestamos_pendientes()
         elif op == "7":
-            consultas_reportes()
+            eliminar_usuario(usuarios)
         elif op == "8":
-            registro_eventos()
+            consultas_reportes()
         elif op == "9":
+            registro_eventos()
+        elif op == "10":
             print("Saliendo del menu de administrador...")
 
             break
@@ -115,7 +120,7 @@ def inicio():
             for datos in usuarios:
             
                 if nom.lower() == datos["nombres"].lower() and id == str(datos["id"]) and datos["tipo_usuario"] == "administrador":
-                    print(menu_admin())
+                    menu_admin()
                     return
             else:
                 print("Usuario no encontrado.")

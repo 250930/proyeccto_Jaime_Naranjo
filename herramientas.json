@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "nombre": "Taladro Bosch",
+        "categoria": "construccion",
+        "cantidad_disponible": 5,
+        "estado": "activa",
+        "valor_estimado": 350000
+    },
+    {
+        "id": 2,
+        "nombre": "Martillo Industrial",
+        "categoria": "construccion",
+        "cantidad_disponible": 10,
+        "estado": "activa",
+        "valor_estimado": 45000
+    },
+    {
+        "id": 3,
+        "nombre": "Podadora El\u00c3\u00a9ctrica",
+        "categoria": "jardineria",
+        "cantidad_disponible": 2,
+        "estado": "en reparacion",
+        "valor_estimado": 800000
+    },
+    {
+        "id": 4,
+        "nombre": "Tijeras de Poda",
+        "categoria": "jardineria",
+        "cantidad_disponible": 7,
+        "estado": "activa",
+        "valor_estimado": 60000
+    },
+    {
+        "id": 5,
+        "nombre": "Escalera Aluminio 6m",
+        "categoria": "construccion",
+        "cantidad_disponible": 1,
+        "estado": "fuera de servicio",
+        "valor_estimado": 500000
+    },
+    {
+        "id": 6,
+        "nombre": "Caja de Herramientas Completa",
+        "categoria": "general",
+        "cantidad_disponible": 3,
+        "estado": "activa",
+        "valor_estimado": 250000
+    },
+    {
+        "id": "7",
+        "nombre": "tijeras",
+        "categoria": "jardineria",
+        "cantidad_disponible": 10,
+        "estado": "activa",
+        "valor_estimado": 8000.0
+    }
+]
