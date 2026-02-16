@@ -1,7 +1,6 @@
 
 import json
 
-
 with open("usuarios.json", "r") as arch:
     usuarios = json.load(arch)
 
@@ -27,7 +26,7 @@ def menu_usuarios():
         if opcion == "1":
             ver_herramientas_disponibles(herramientas)       
         elif opcion == "2":
-            solcitar_herramienta()
+            solcitar_herramienta()  
         elif opcion == "3":
             devolver_herramienta()
         elif opcion == "4":
@@ -51,36 +50,42 @@ def menu_admin():
     2. Agregar herramienta
     3. Modificar herramienta
     4. Eliminar herramienta
-    5. Agregar/Actualizar usuario
-    6. Prestamos pendientes
-    7. Eliminar usuario
-    8.Consultas y reportes
-    9.Registro de eventos (logs)
-    10. Salir
+    5. Agregar usuario
+    6. Actualizar usuario
+    7. Prestamos pendientes
+    8. Eliminar usuario
+    9.Consultas y reportes
+    10.Registro de eventos (logs)
+    11. Salir
     ================================
         """)
-        op = input("Ingrese una opcion: ")
+        op = str(input("Ingrese una opcion: "))
         from herramientas import ver_herramientas_disponibles,agregar_herramienta,  eliminar_herramienta, modificar_herramienta
-        from usurios import agregar_actualizar_usuario, prestamos_pendientes, eliminar_usuario, consultas_reportes, registro_eventos
+        from usurios import agregar_usuario, eliminar_usuario, actualizar_usuario
+        from datos import prestamos_pendientes, consultas_reportes, registro_eventos, mostrar_logs
         if op == "1":
             ver_herramientas_disponibles(herramientas)
         elif op == "2":
-            agregar_herramienta(herramientas)
+            agregar_herramienta()
         elif op == "3":
-            modificar_herramienta(herramientas)
-        elif op == "4":            
-            eliminar_herramienta(herramientas)
+            modificar_herramienta()
+        elif op == "4":
+            id_herramienta = int(input("Ingrese el ID de la herramienta para eliminar:"))            
+            eliminar_herramienta(id_herramienta)
         elif op == "5":
-            agregar_actualizar_usuario(usuarios)
+            agregar_usuario()
         elif op == "6":
-            prestamos_pendientes()
+            actualizar_usuario()
         elif op == "7":
-            eliminar_usuario(usuarios)
+            prestamos_pendientes()
         elif op == "8":
-            consultas_reportes()
+            id_usuario = int(input("Ingrese el ID del usuario para eliminar:"))  
+            eliminar_usuario(id_usuario)
         elif op == "9":
-            registro_eventos()
+            consultas_reportes()
         elif op == "10":
+            mostrar_logs()
+        elif op == "11":
             print("Saliendo del menu de administrador...")
 
             break
@@ -109,7 +114,7 @@ def inicio():
             for datos in usuarios:
                 if nom.lower() == datos["nombres"].lower() and id == str(datos["id"]) and datos["tipo_usuario"] == "residente":
                     menu_usuarios()
-                    return
+                    break
             else:
                 print("Usuario no encontrado.")
 
@@ -121,7 +126,7 @@ def inicio():
             
                 if nom.lower() == datos["nombres"].lower() and id == str(datos["id"]) and datos["tipo_usuario"] == "administrador":
                     menu_admin()
-                    return
+                    break
             else:
                 print("Usuario no encontrado.")
             

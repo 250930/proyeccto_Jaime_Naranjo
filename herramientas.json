@@ -41,18 +41,34 @@
     },
     {
         "id": 6,
-        "nombre": "Caja de Herramientas Completa",
-        "categoria": "general",
-        "cantidad_disponible": 3,
-        "estado": "activa",
-        "valor_estimado": 250000
+        "nombre": "consolador",
+        "categoria": "uso personal",
+        "cantidad_disponible": 100000,
+        "estado": "perfecto estado",
+        "valor_estimado": 1000000.0
     },
     {
-        "id": "7",
-        "nombre": "tijeras",
-        "categoria": "jardineria",
+        "id": 7,
+        "nombre": "matraca",
+        "categoria": "sonido",
         "cantidad_disponible": 10,
-        "estado": "activa",
-        "valor_estimado": 8000.0
+        "estado": "perfecta",
+        "valor_estimado": 1000000000.0
+    },
+    {
+        "id": 8,
+        "nombre": "grapadora",
+        "categoria": "carpinteria",
+        "cantidad_disponible": 3,
+        "estado": "70000",
+        "valor_estimado": 700000.0
+    },
+    {
+        "id": 9,
+        "nombre": "motosierra ",
+        "categoria": "carpinteria",
+        "cantidad_disponible": 1,
+        "estado": "perfectas condiciones",
+        "valor_estimado": 2000000.0
     }
 ]

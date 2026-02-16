@@ -37,3 +37,6 @@ Archivos de persistencia generados por el programa (.txt, .csv o .json).
 Archivo de logs con eventos relevantes.
 Documento README.md con instrucciones de ejecución.
 Carpeta de pruebas con casos de entrada y salida.
+
+
+
