@@ -77,3 +77,4 @@ def usuarios_mas_activos():
 
     for u_id, total in sorted(contador.items(), key=lambda x: x[1], reverse=True):
         print(f'Usuario ID: {u_id} | Total herramientas solicitadas: {total}')
+    

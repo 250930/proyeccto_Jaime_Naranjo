@@ -31,7 +31,7 @@ def prestamos_pendientes():
 
             opcion = input("Seleccione una opción: ")
 
-            if opcion == "1":  # APROBAR
+            if opcion == "1":  
 
                 for herramienta in herramientas:
 
@@ -42,24 +42,24 @@ def prestamos_pendientes():
                             herramienta["cantidad_disponible"] -= prestamo["cantidad"]
                             prestamo["estado"] = "aprobado"
 
-                            print("Préstamo aprobado correctamente ✅")
+                            print("Préstamo aprobado correctamente ")
                             registro_eventos(f"Préstamo ID {prestamo['id']} aprobado correctamente.")
 
                         else:
-                            print("Stock insuficiente ❌")
+                            print("Stock insuficiente ")
                             registro_eventos(f"Error: Stock insuficiente para préstamo ID {prestamo['id']}.")
                             return
                         break
 
-            elif opcion == "2":  # RECHAZAR
+            elif opcion == "2": 
 
                 prestamo["estado"] = "rechazado"
-                print("Préstamo rechazado ❌")
-                registro_eventos(f"Préstamo ID {prestamo['id']} rechazado.")
+                print("Préstamo rechazado ")
+                registro_eventos(f"Prestamo ID {prestamo['id']} rechazado.")
 
             else:
                 print("Opción inválida")
-                registro_eventos(f"Opción inválida al procesar préstamo ID {prestamo['id']}.")
+                registro_eventos(f"Opcion inválida al procesar préstamo ID {prestamo['id']}.")
                 return
 
             break
